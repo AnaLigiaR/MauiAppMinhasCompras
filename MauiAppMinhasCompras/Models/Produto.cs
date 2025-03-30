@@ -6,7 +6,7 @@ namespace MauiAppMinhasCompras.Models
     {
         string _descricao;
         double _quantidade;
-
+        
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string Descricao { 
@@ -36,6 +36,7 @@ namespace MauiAppMinhasCompras.Models
         }
         public double Preco {  get; set; }
         public double Total { get => Quantidade * Preco; }
+        public DateTime DataCadastro { get; set; }
 
     }
 }

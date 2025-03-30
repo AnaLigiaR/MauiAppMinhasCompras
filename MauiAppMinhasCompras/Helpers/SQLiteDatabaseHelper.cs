@@ -44,5 +44,12 @@ namespace MauiAppMinhasCompras.Helpers
             return _conn.QueryAsync<Produto>(sql);
         }
 
+        public Task<List<Produto>> SearchByTime(long startingTime,  long endingTime) 
+        {
+            string sql = $"SELECT * FROM Produto WHERE DataCadastro BETWEEN {startingTime} AND {endingTime}";
+
+            return _conn.QueryAsync<Produto>(sql);
+        }
+
     }
 }
